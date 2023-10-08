@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <script src="scripts/error.js" defer></script>
+  <script src="scripts/functions.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <!-- Typographies -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Age calculator app</title>
+
+</head>
+<body>
+  <main>
+    <section role="Form">
+      <form>
+        <div>
+          <label for="day">Day</label>
+          <input type="text" name="day" placeholder="DD">
+          <p class="errorFeedback day"></p>
+        </div>
+        <div>
+          <label for="month">Month</label>
+          <input type="text" name="month" placeholder="MM">
+          <p class="errorFeedback month"></p>
+        </div>
+        <div>
+          <label for="year">Year</label>
+          <input type="text" name="year" placeholder="YYYY">
+          <p class="errorFeedback year"></p>
+        </div>
+        <div class="submit-part flex">
+          <div></div>
+          <input type="submit" value="" disabled="true"/>
+        </div>
+      </form>
+    </section>
+    <section role="Result">
+      <p><span class="years output">--</span>years</p>
+      <p><span class="months output">--</span>months</p>
+      <p><span class="days output">--</span>days</p>
+    </section>
+  </main>  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Lou Mauriège</a>.
+  </div> -->
+</body>
+</html>

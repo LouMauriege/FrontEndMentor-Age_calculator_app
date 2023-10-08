@@ -1,0 +1,259 @@
+/* Primary */
+
+$Purple: hsl(259, 100%, 65%);
+$Light-red: hsl(0, 100%, 67%);
+
+
+
+/* Neutral */
+
+$White: hsl(0, 0%, 100%);
+$Off-white: hsl(0, 0%, 94%);
+$Light-grey: hsl(0, 0%, 86%);
+$Smokey-grey: hsl(0, 1%, 44%);
+$Off-black: hsl(0, 0%, 8%);
+
+
+
+/* Mixin */
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Reset */
+
+/* No arrows number type input
+   Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=text] {
+  appearance: textfield;
+}
+
+/* No focus default styling */
+*:focus {
+    outline: none;
+}
+
+
+
+/* Root */
+
+:root {
+    font-size: 32px;
+}
+
+
+
+/* Bottom infos */
+
+.attribution {
+    position: absolute;
+    bottom: 0.5rem;
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+
+/* Utility class */
+
+.flex {
+    display: flex;
+}
+
+
+
+/* Main design */
+
+body {
+    @include flex-center;
+    width: 100%;
+    height: 100vh;
+    background: $Off-white;
+    font-family: Poppins;
+}
+main {
+    background: $White;
+    width: 680px;
+    padding: 56px 53px 55px 53px;
+    border-radius: 22px 22px 190px 22px;
+}
+
+
+
+/* Form design */
+
+form {
+    width: auto;
+    display: flex;
+    column-gap: 30px;
+    flex-wrap: wrap;
+
+    label {
+        display: block;
+        margin-bottom: 11px;
+        color: $Smokey-grey;
+        font-weight: 700;
+        font-size: .42rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    
+    input[type="text"] {
+        width: 105px;
+        height: 65px;
+        padding: 0 21px;
+        font-family: Poppins;
+        font-size: .95rem;
+        border: 1px solid $Light-grey;
+        border-radius: 8px;
+
+        &:focus {
+            border-color: $Off-black;
+        }
+    }
+
+    .submit-part {
+        width: 100%;
+        align-items: center;
+
+        div{
+            flex-grow: 1;
+            height: 1px;
+            background: $Light-grey;
+        }
+
+        input {
+            border: 0;
+            width: 90px;
+            height: 90px;
+            border-radius: 999px;
+            background: $Purple;
+            background-image: url("../assets/images/icon-arrow.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                background-color: $Off-black;
+            }
+
+            &:disabled {
+                background-color: $Light-grey;
+            }
+        }
+    }
+}
+
+
+
+/* From error state */
+
+form{
+    .errorState {
+        label {
+            color: $Light-red;
+        }
+        input[type="text"] {
+            border-color: $Light-red;
+        }
+        .errorFeedback{
+            position: absolute;
+            padding-top: .25rem;
+            color: $Light-red;
+            font-family: Poppins;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 0.4rem;
+        }
+    }
+}
+
+
+
+/* Output design */
+
+[role="Result"] {
+    font-weight: 800;
+    font-style: italic;
+    font-size: 3rem;
+    color: $Off-black;
+    p {
+        line-height: 1.1em;
+
+        span {
+            letter-spacing: .5rem;
+            color: $Purple;
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    /*Root */
+    :root {
+        font-size: 16px;
+    }
+    
+
+
+    /* Main design */
+
+    main {
+        width: auto;
+        margin: 1rem;
+        padding: 50px 23px;
+        border-bottom-right-radius: 100px;
+    }
+
+
+
+    /* Form design */
+
+    form {
+        column-gap: 16px;
+
+        label {
+            font-size: 0.8rem;
+            margin-bottom: 7px;
+        }
+
+        input[type="number"] {
+            width: 55px;
+            height: 50px;
+            padding: 0 15px;
+            font-size: 20px;
+        }
+
+        .submit-part{
+            position: relative;
+            justify-content: center;
+
+            input {
+                width: 60px;
+                height: 60px;
+                position: relative;
+                z-index: 1;
+                margin: 30px 0;
+                background-size: 20px;
+            }
+
+            div{
+                position: absolute;
+                width: 100%;
+            }
+        }
+    }
+
+}

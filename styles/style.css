@@ -1,0 +1,197 @@
+/* Primary */
+/* Neutral */
+/* Mixin */
+/* Reset */
+/* No arrows number type input
+   Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=text] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+/* No focus default styling */
+*:focus {
+  outline: none;
+}
+
+/* Root */
+:root {
+  font-size: 32px;
+}
+
+/* Bottom infos */
+.attribution {
+  position: absolute;
+  bottom: 0.5rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Utility class */
+.flex {
+  display: flex;
+}
+
+/* Main design */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: hsl(0, 0%, 94%);
+  font-family: Poppins;
+}
+
+main {
+  background: hsl(0, 0%, 100%);
+  width: 680px;
+  padding: 56px 53px 55px 53px;
+  border-radius: 22px 22px 190px 22px;
+}
+
+/* Form design */
+form {
+  width: auto;
+  display: flex;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  flex-wrap: wrap;
+}
+form label {
+  display: block;
+  margin-bottom: 11px;
+  color: hsl(0, 1%, 44%);
+  font-weight: 700;
+  font-size: 0.42rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+form input[type=text] {
+  width: 105px;
+  height: 65px;
+  padding: 0 21px;
+  font-family: Poppins;
+  font-size: 0.95rem;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 8px;
+}
+form input[type=text]:focus {
+  border-color: hsl(0, 0%, 8%);
+}
+form .submit-part {
+  width: 100%;
+  align-items: center;
+}
+form .submit-part div {
+  flex-grow: 1;
+  height: 1px;
+  background: hsl(0, 0%, 86%);
+}
+form .submit-part input {
+  border: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 999px;
+  background: hsl(259, 100%, 65%);
+  background-image: url("../assets/images/icon-arrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+form .submit-part input:hover {
+  background-color: hsl(0, 0%, 8%);
+}
+form .submit-part input:disabled {
+  background-color: hsl(0, 0%, 86%);
+}
+
+/* From error state */
+form .errorState label {
+  color: hsl(0, 100%, 67%);
+}
+form .errorState input[type=text] {
+  border-color: hsl(0, 100%, 67%);
+}
+form .errorState .errorFeedback {
+  position: absolute;
+  padding-top: 0.25rem;
+  color: hsl(0, 100%, 67%);
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.4rem;
+}
+
+/* Output design */
+[role=Result] {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 3rem;
+  color: hsl(0, 0%, 8%);
+}
+[role=Result] p {
+  line-height: 1.1em;
+}
+[role=Result] p span {
+  letter-spacing: 0.5rem;
+  color: hsl(259, 100%, 65%);
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+  /*Root */
+  :root {
+    font-size: 16px;
+  }
+  /* Main design */
+  main {
+    width: auto;
+    margin: 1rem;
+    padding: 50px 23px;
+    border-bottom-right-radius: 100px;
+  }
+  /* Form design */
+  form {
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+  }
+  form label {
+    font-size: 0.8rem;
+    margin-bottom: 7px;
+  }
+  form input[type=number] {
+    width: 55px;
+    height: 50px;
+    padding: 0 15px;
+    font-size: 20px;
+  }
+  form .submit-part {
+    position: relative;
+    justify-content: center;
+  }
+  form .submit-part input {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    z-index: 1;
+    margin: 30px 0;
+    background-size: 20px;
+  }
+  form .submit-part div {
+    position: absolute;
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
