@@ -213,7 +213,7 @@ form{
     main {
         width: auto;
         margin: 1rem;
-        padding: 50px 23px;
+        padding: 25px 23px 50px 23px;
         border-bottom-right-radius: 100px;
     }
 
@@ -222,30 +222,38 @@ form{
     /* Form design */
 
     form {
-        column-gap: 16px;
+        flex-direction: column;
+        row-gap: 24px;
 
         label {
             font-size: 0.8rem;
             margin-bottom: 7px;
         }
 
-        input[type="number"] {
-            width: 55px;
-            height: 50px;
+        input[type="text"] {
+            width: calc(100% - 30px);
+            height: 45px;
             padding: 0 15px;
             font-size: 20px;
+        }
+
+        .errorState {
+            .errorFeedback {
+                font-size: .6rem;
+            }
         }
 
         .submit-part{
             position: relative;
             justify-content: center;
+            margin-bottom: 15px;
 
             input {
                 width: 60px;
                 height: 60px;
                 position: relative;
                 z-index: 1;
-                margin: 30px 0;
+                margin: 0;
                 background-size: 20px;
             }
 
